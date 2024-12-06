@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark-reasonable.min.css">
+    <style>
+        :root {
+            --sideCont: 20%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .list-container {
+            width: var(--sideCont);
+            min-width: 250px;
+            background-color: #1e1e1e;
+            overflow-y: auto;
+            padding: 10px;
+            border-right: 2px solid #444;
+        }
+
+        .view-container {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        input[type="text"] {
+            background-color: #333;
+            color: #e0e0e0;
+            border: 1px solid #555;
+            padding: 10px;
+        }
+
+        textarea {
+            height: 100px;
+            background-color: #333;
+            color: #e0e0e0;
+            border: 1px solid #555;
+            padding: 10px;
+        }
+
+        button {
+            background-color: #444;
+            color: #e0e0e0;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background-color: #333;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button.delete-btn {
+            background-color: red;
+            color: #e0e0e0;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button.delete-btn:hover {
+            background-color: darkred;
+        }
+
+        button.view-btn {
+            background-color: #007bff;
+            color: #e0e0e0;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button.view-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .json-content {
+            background-color: #222;
+            color: #e0e0e0;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-y: auto;
+        }
+
+        .json-content pre {
+            white-space: pre-wrap;
+            /* Wrap long lines */
+            word-break: break-word;
+            /* Break long words */
+            margin: 0;
+        }
+
+        pre {
+            font-size: medium;
+        }
+
+        .listCont {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .listCont>p {
+            max-width: 30%;
+            white-space: nowrap;
+            /* Prevent text from wrapping to the next line */
+            overflow: hidden;
+            /* Hide text that overflows the width */
+            text-overflow: ellipsis;
+            /* Display dots ("...") for overflowed text */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="list-container">
+            <h1>JSON Manager</h1>
+            <input type="text" id="jsonTitle" placeholder="Enter JSON title">
+            <textarea id="jsonInput" placeholder="Enter JSON here"></textarea>
+            <button id="saveButton">Save JSON</button>
+            <h2>Saved JSONs</h2>
+            <ul id="jsonList"></ul>
+        </div>
+        <div class="view-container" id="viewContainer">
+            <h2>View JSON</h2>
+            <input type="text" id="viewJsonTitle" placeholder="JSON Title">
+            <div contenteditable="true" id="jsonContentArea" class="json-content"></div>
+            <button id="saveChangesButton" style="display:none;">Save Changes</button>
+        </div>
+    </div>
+    <script src="../highlight.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

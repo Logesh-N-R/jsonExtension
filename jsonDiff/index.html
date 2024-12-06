@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>JSON diff</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="./diffview.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark-reasonable.min.css">
+    <script type="text/javascript" src="diffview.js"></script>
+    <script type="text/javascript" src="difflib.js"></script>
+    <script type="text/javascript" src="../highlight.js" defer></script>
+    <script type="text/javascript" src="scripts.js" defer></script>
+</head>
+
+<body id="container">
+    <h1 class="top">JSON diff tool</h1>
+    <div class="row">
+        <div class="outputCon">
+            <div id="diffoutput" width="1000px"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="textInput">
+            <h2>Left JSON</h2>
+            <textarea id="baseText"></textarea>
+        </div>
+        <div class="textInput spacer">
+            <h2>Right JSON</h2>
+            <textarea id="newText"></textarea>
+        </div>
+    </div>
+    <div class="radioGroup sortOption">
+        <input type="radio" name="_sortoption" id="sorton" /> <label for="sorton">Sort</label>
+        <input type="radio" name="_sortoption" id="sortoff" checked /> <label for="sortoff">No Sort</label>
+    </div>
+    <div class="radioGroup viewType">
+        <input type="radio" name="_viewtype" id="sidebyside" /> <label for="sidebyside">Side by Side Diff</label>
+        <input type="radio" name="_viewtype" id="inline" checked /> <label for="inline">Inline Diff</label>
+    </div>
+</body>
+
+</html>

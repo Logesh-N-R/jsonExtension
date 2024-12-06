@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar collapsed custom-scrollbar">
+        <button class="collapse-btn">
+            <i class="arrow fas fa-chevron-left"></i>
+        </button>
+        <div class="menu">
+            <a href="../jsonManager/index.html" title="JSON diff tool" class="active fade-in"><i class="fa-solid fa-list-check"></i><span>JSON Manager</span></a>
+            <a href="../jsonDiff/index.html" title="JSON diff tool" class="fade-in"><i class="fa-solid fa-right-left"></i><span>JSON Diff Tool</span></a>
+            <a href="../jsonFormatter/index.html" title= "JSON formatter" class="fade-in"><i class="fa-solid fa-indent"></i><span>JSON Formatter</span></a>
+            <a href="http://localhost/JSON_EXTENSTION/print_rToJson/print_rToJson.html" title="print_r to JSON" class="fade-in"><i class="fa-solid fa-file-export"></i><span>print_r array to JSON</span></a>
+            <a href="http://localhost/RetailGroup/RGDEVKIT" title="Encrypt / Decrypt" class="fade-in"><i class="fa-solid fa-lock-open"></i><span>Encrypt / Decrypt</span></a>
+        </div>
+    </div>
+    <div class="main-content custom-scrollbar">
+        <iframe id="content-frame" src="../jsonManager/index.html"></iframe>
+        <p class="sign">@Loki</p>
+    </div>
+    <script src="./scripts.js"></script>
+</body>
+</html>
